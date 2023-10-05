@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TypeScript App</title>
+</head>
+<body>
+    <p id="myParagraph"></p>
+    <script src="../dist/app.js"></script>
+    <script>
+        // Access the variable from app.js
+        document.getElementById("myParagraph").innerText = myVariable;
+    </script>
+</body>
+</html>
