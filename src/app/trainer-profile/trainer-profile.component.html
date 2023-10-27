@@ -1,0 +1,52 @@
+<!-- trainer-details.component.html -->
+<div class="center-content">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Trainer Details</mat-card-title> 
+          
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    <p><strong>First Name:</strong> {{trainer?.firstName}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Last Name:</strong> {{trainer?.lastName}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Email:</strong> {{trainer?.email}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Specialization:</strong> {{trainer?.specialization}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Active:</strong> {{trainer?.active}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+             
+                <mat-list-item>
+                    <a [matMenuTriggerFor]="trainees"><p><strong>Trainees <span><mat-icon>expand_more</mat-icon></span></strong>  </p></a>
+                    <mat-menu #trainees="matMenu">
+                        <button mat-menu-item *ngFor="let trainer of trainer?.traineeResponseDtoList">
+                            {{ trainer.firstName }} {{ trainer.lastName }}
+                        </button>
+                    </mat-menu>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+
+            <mat-divider></mat-divider> <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" routerLink="/training" routerLinkActive="active">View Trainings</button>
+            <button mat-raised-button color="primary" routerLink="/trainer-update" routerLinkActive="active">Update Profile</button>
+            <button mat-raised-button color="primary" routerLink="/change-password" routerLinkActive="active">Change Password</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

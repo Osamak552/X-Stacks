@@ -1,0 +1,42 @@
+<div class="center-content">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Schedule training</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="trainingForm" (ngSubmit)="addTrainig()">
+
+                <!---------------------------Date------------------------->
+                <mat-form-field appearance="outline">
+                    <mat-label>Training date</mat-label>
+                    <input matInput type="date" placeholder="date" formControlName="trainingDate" required>
+                </mat-form-field>
+                <!---------------------------Training Name------------------------->
+                <mat-form-field appearance="outline">
+                    <mat-label>Training name</mat-label>
+                    <input matInput placeholder="Training name" formControlName="trainingName" required>
+                </mat-form-field>
+                <!---------------------------Training Duration------------------------->
+                <mat-label>Duration</mat-label>
+                <mat-slider min="15" max="100" step="1" showTickMarks discrete [displayWith]="formatLabel"
+                    class="example-margin">
+                    <input matSliderThumb formControlName="trainingDuration" >
+                </mat-slider>
+
+                <!---------------------------Trainer Name------------------------->
+                <mat-form-field>
+                    <mat-label>Trainer</mat-label>
+                    <mat-select name="trainer" formControlName="trainerUsername">
+                        <mat-option *ngFor="let trainer of trainersList" [value]="trainer.username">
+                            {{ trainer.firstName }} {{trainer.lastName}} - {{trainer.specialization}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit">Confirm</button>
+            </form>
+        </mat-card-content>
+
+
+    </mat-card>
+</div>

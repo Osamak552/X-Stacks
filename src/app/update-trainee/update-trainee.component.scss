@@ -1,0 +1,17 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100%;  
+  }
+
+.center-content mat-card {
+    width: 500px; 
+    height: 650px;
+}
+mat-slide-toggle {
+  margin-top: -15px;
+  margin-bottom: 30px;
+  display: block;
+}

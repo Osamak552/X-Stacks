@@ -1,0 +1,94 @@
+@import "../node_modules/@angular/material/theming";
+@import "./styles/variables";
+@import "./styles/material-override.scss";
+@import "./styles/app-styles.scss";
+
+@include mat-core();
+
+$dark-primary: #{$color1};
+$light-primary: #FFFFFF;
+
+$mat-primary: (
+  50 : #FFFFFF,
+  100 : #FFFFFF,
+  200 : #FFFFFF,
+  300 : #FFFFFF,
+  400 : #FFFFFF,
+  500 : #FFFFFF,
+  600 : #FFFFFF,
+  700 : #f4a735,
+  800 : #FFFFFF,
+  900 : #FFFFFF,
+  A100 : #FFFFFF,
+  A200 : #FFFFFF,
+  A400 : #FFFFFF,
+  A700 : #FFFFFF,
+  contrast: (
+    50 : $dark-primary,
+    100 : $dark-primary,
+    200 : $dark-primary,
+    300 : $dark-primary,
+    400 : $light-primary,
+    500 : $light-primary,
+    600 : $light-primary,
+    700 : $light-primary,
+    800 : $light-primary,
+    900 : $light-primary,
+    A100 : $dark-primary,
+    A200 : $dark-primary,
+    A400 : $dark-primary,
+    A700 : $dark-primary,
+  )
+);
+
+$mat-accent: (
+  50 : #f4a735,
+  100 : #f4a735,
+  200 : #f4a735,
+  300 : #f4a735,
+  400 : #f4a735,
+  500 : #f4a735,
+  600 : #f4a735,
+  700 : #f4a735,
+  800 : #f4a735,
+  900 : #f4a735,
+  A100 : #f4a735,
+  A200 : #f4a735,
+  A400 : #f4a735,
+  A700 : #f4a735,
+  contrast: (
+    50 : $dark-primary,
+    100 : $dark-primary,
+    200 : $dark-primary,
+    300 : $dark-primary,
+    400 : $light-primary,
+    500 : $light-primary,
+    600 : $light-primary,
+    700 : $light-primary,
+    800 : $light-primary,
+    900 : $light-primary,
+    A100 : $dark-primary,
+    A200 : $dark-primary,
+    A400 : $dark-primary,
+    A700 : $dark-primary,
+  )
+);
+
+$primary: mat-palette($mat-primary, 700);
+$accent: mat-palette($mat-accent, A700);
+
+$my-theme: mat-light-theme((
+ color: (
+   primary: $primary,
+   accent: $accent,
+ )
+));
+
+@include all-component-themes($my-theme);
+
+html, body {height: 100%;}
+body{
+  margin: 0;
+  font-family: Itim, 'Source Sans Pro';
+
+}

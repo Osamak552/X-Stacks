@@ -1,0 +1,129 @@
+<!-------------------------Trainer------------------------>
+
+<div class="container" *ngIf="role === 'trainer' ">
+    <div class="control-panel">
+        <mat-toolbar>
+                  <button mat-icon-button (click)="openDialog()" matTooltip="Filters" class="example-icon">
+                    <mat-icon>filter_list</mat-icon>
+                </button>
+                <span>Apply filters</span>
+                <span class="spacer"></span>
+            
+                <mat-form-field>
+                    <mat-icon matPrefix>search</mat-icon>
+                    <mat-label>Search Trainees</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Type here to search">
+                  </mat-form-field>
+        </mat-toolbar>
+    </div>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Trainer-Name Column -->
+        <ng-container matColumnDef="Trainee">
+          <mat-header-cell *matHeaderCellDef> Trainee </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.traineeName}} </mat-cell>
+        </ng-container>
+      
+        <!-- Trainee-Name Column -->
+        <ng-container matColumnDef="Trainer">
+          <mat-header-cell *matHeaderCellDef> Trainer </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.trainerName}} </mat-cell>
+        </ng-container>
+      
+        <!-- Training Name Column -->
+        <ng-container matColumnDef="Training Name">
+          <mat-header-cell *matHeaderCellDef> Training Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.trainingName}} </mat-cell>
+        </ng-container>
+      
+        <!-- Training Type Column -->
+        <ng-container matColumnDef="Training Type">
+          <mat-header-cell *matHeaderCellDef> Training Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.trainingType}} </mat-cell>
+        </ng-container>
+
+        <!-- Duration Column -->
+        <ng-container matColumnDef="Duration">
+          <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.trainingDuration}} </mat-cell>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="Date">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.trainingDate}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      
+      <mat-paginator [length]="totalNoOfRows" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" (page)="onPageChange($event)">
+    </mat-paginator>
+    
+</div>
+
+<!-------------------------Trainee------------------------>
+
+<div class="container" *ngIf="role === 'trainee' ">
+  <div class="control-panel">
+    <mat-toolbar>
+              <button mat-icon-button (click)="openDialog()" matTooltip="Filters" class="example-icon">
+                <mat-icon>filter_list</mat-icon>
+            </button>
+            <span>Apply filters</span>
+            <span class="spacer"></span>
+        
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <mat-label>Search Trainees</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Type here to search">
+              </mat-form-field>
+    </mat-toolbar>
+</div>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Trainer-Name Column -->
+    <ng-container matColumnDef="Trainee">
+      <mat-header-cell *matHeaderCellDef> Trainee </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.traineeName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Trainee-Name Column -->
+    <ng-container matColumnDef="Trainer">
+      <mat-header-cell *matHeaderCellDef> Trainer </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainerName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Training Name Column -->
+    <ng-container matColumnDef="Training Name">
+      <mat-header-cell *matHeaderCellDef> Training Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Training Type Column -->
+    <ng-container matColumnDef="Training Type">
+      <mat-header-cell *matHeaderCellDef> Training Type </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingType}} </mat-cell>
+    </ng-container>
+
+    <!-- Duration Column -->
+    <ng-container matColumnDef="Duration">
+      <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingDuration}} </mat-cell>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="Date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingDate}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  
+  <mat-paginator [length]="totalNoOfRows" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" (page)="onPageChange($event)">
+</mat-paginator>
+  
+</div>

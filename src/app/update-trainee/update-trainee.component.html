@@ -1,0 +1,43 @@
+<div class="center-content">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Update</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="traineeForm" (ngSubmit)="updateTrainee()">
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder={{trainee?.firstName}} formControlName="firstName" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    
+                    <input matInput  placeholder={{trainee?.lastName}} formControlName="lastName" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    
+                    <input matInput type="date" placeholder="date" formControlName="dateOfBirth" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput type="text" placeholder="address" formControlName="address" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Trainers List</mat-label>
+                    <mat-select formControlName="selectedTrainers" multiple>
+                      <mat-option *ngFor="let trainer of trainers" [value]="trainer.username">
+                        {{ trainer.firstName }} {{ trainer.lastName }} - {{ trainer.specialization }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            
+                <mat-slide-toggle formControlName="active">Active</mat-slide-toggle>
+                <button mat-raised-button color="primary" type="submit">Update</button>
+            </form>
+        </mat-card-content>
+
+    
+      </mat-card>
+    </div>
+
+    
+    

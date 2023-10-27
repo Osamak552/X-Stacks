@@ -1,0 +1,36 @@
+<div class="center-content">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="formGroup"  (ngSubmit)="login()">
+                <mat-form-field appearance="outline">
+                    <mat-label>username</mat-label>
+                    <input matInput placeholder="Username" formControlName="username" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Select role</mat-label>
+                    <mat-select [(value)]="selected">
+                      <mat-option value="trainee">trainee</mat-option>
+                      <mat-option value="trainer">tranier</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </mat-card-content>
+        <mat-card-footer>
+            <a>
+                forgot password
+            </a>
+        </mat-card-footer>
+    
+      </mat-card>
+    </div>
+
+    
+    

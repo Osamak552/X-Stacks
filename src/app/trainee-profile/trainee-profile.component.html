@@ -1,0 +1,56 @@
+<!-- trainer-details.component.html -->
+<div class="center-content">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Trainee Details</mat-card-title> 
+          
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    <p><strong>First Name:</strong> {{trainee?.firstName}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Last Name:</strong> {{trainee?.lastName}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Email:</strong> {{trainee?.email}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Date of birth:</strong> {{trainee?.dateOfBirth}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Address:</strong> {{trainee?.address}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <p><strong>Active:</strong> {{trainee?.active}}</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+             
+                <mat-list-item>
+                    <a [matMenuTriggerFor]="trainers"><p><strong>Trainers <span><mat-icon>expand_more</mat-icon></span></strong>  </p></a>
+                    <mat-menu #trainers="matMenu">
+                        <button mat-menu-item *ngFor="let trainer of trainee?.trainerResponseDtoList">
+                            {{ trainer.firstName }} {{ trainer.lastName }} - {{ trainer.specialization }}
+                        </button>
+                    </mat-menu>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+
+            <mat-divider></mat-divider> <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" routerLink="/training" routerLinkActive="active">View Trainings</button>
+            <button mat-raised-button color="primary" routerLink="/trainee-update" routerLinkActive="active">Update Profile</button>
+            <button mat-raised-button color="primary" routerLink="/change-password" routerLinkActive="active">Change Password</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

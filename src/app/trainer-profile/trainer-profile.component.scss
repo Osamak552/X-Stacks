@@ -1,0 +1,19 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100%;  
+    mat-card {
+        width: 700px; 
+        height: 650px;
+    }
+    mat-card-actions{
+        flex-direction: row;
+        button{
+            margin: 0.5rem;
+         }
+    }
+}
+
+
