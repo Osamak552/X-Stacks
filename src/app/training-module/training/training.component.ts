@@ -4,9 +4,9 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
 import { DialogOverviewExampleDialog } from './trainer-filter.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FormControl, FormGroup, Validators, isFormRecord } from '@angular/forms';
-import { TrainingService } from '../services/training.service';
-import { Training } from '../models/training.model';
-import { TrainingSession } from '../models/training-session.model';
+import { TrainingService } from '../../services/training.service';
+import { Training } from '../../models/training.model';
+import { TrainingSession } from '../../models/training-session.model';
 import { MatPaginator } from '@angular/material/paginator';
 
 

@@ -10,10 +10,10 @@
 
     <div class="menu-items">
       <a mat-button routerLink="/home" routerLinkActive="active" *ngIf="role === 'home'" >Home</a>
-      <a mat-button routerLink="/trainee-register" routerLinkActive="active" *ngIf="role === 'home' ">Trainee Registration</a>
-      <a mat-button routerLink="/trainer-register" routerLinkActive="active" *ngIf="role === 'home' ">Trainer Registration</a>
+      <a mat-button routerLink="trainee/trainee-register" routerLinkActive="active" *ngIf="role === 'home' ">Trainee Registration</a>
+      <a mat-button routerLink="trainer/trainer-register" routerLinkActive="active" *ngIf="role === 'home' ">Trainer Registration</a>
       <a mat-button routerLink="/login" routerLinkActive="active" *ngIf="role === 'home' ">Login</a>
-      <a mat-button routerLink="/add-training" routerLinkActive="active" *ngIf="role === 'trainee' "><mat-icon>add</mat-icon> <span>Add training</span></a>
+      <a mat-button routerLink="training/add-training" routerLinkActive="active" *ngIf="role === 'trainee' "><mat-icon>add</mat-icon> <span>Add training</span></a>
       <a mat-button routerLink="/logout" routerLinkActive="active" *ngIf="role !== 'home' ">Logout</a>
     </div>
 

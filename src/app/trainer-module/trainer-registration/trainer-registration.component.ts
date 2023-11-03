@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Specialization } from '../models/specialization.model';
-import { TrainerService } from '../services/trainer.service';
+import { Specialization } from '../../models/specialization.model';
+import { TrainerService } from '../../services/trainer.service';
 
 @Component({
   selector: 'app-trainer-registration',

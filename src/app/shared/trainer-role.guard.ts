@@ -18,15 +18,15 @@ export const trainerRoleGuard: CanActivateFn = (route, state) => {
   const trainerRoleGuardService = inject(TrainerRoleGuardService);
   const router: Router = trainerRoleGuardService.getRouter();
   if(localStorage.getItem("role") === 'trainer'){
-
     return true;
   }
+  
   else if(localStorage.getItem("role") === ''){
     router.navigate(['/login']);
     return false;
   }
  
   alert("You don't have an access");
-  router.navigate(['/trainee-profile']);  
+  router.navigate(['trainee/trainee-profile']);  
   return false;
 };

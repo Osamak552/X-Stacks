@@ -1,8 +1,8 @@
-import { Specialization } from './../models/specialization.model';
-import { TraineeService } from './../services/trainee.service';
+import { Specialization } from '../../models/specialization.model';
+import { TraineeService } from '../../services/trainee.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavbarService } from '../services/navbar.service';
+import { NavbarService } from '../../services/navbar.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,16 +12,12 @@ import { Router } from '@angular/router';
 })
 export class TraineeRegistrationComponent implements OnInit{
 
-  
-
   constructor(private navbarService:NavbarService
     ,private router:Router
     ,private traineeeService:TraineeService){}
 
   ngOnInit(): void {
     this.navbarService.updateData('home');
-    
-
   }
 
    traineeForm = new FormGroup({
@@ -41,7 +37,7 @@ export class TraineeRegistrationComponent implements OnInit{
     }
     else{
       alert("Please provide proper trainee details");
-      this.router.navigate(['/trainee-register']);
+      this.router.navigate(['trainee/trainee-register']);
     }
   }
 }

@@ -1,17 +1,11 @@
-
-import { TraineeService } from './../services/trainee.service';
-import { TrainerService } from './../services/trainer.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../models/user.model';
-import { Token } from '../models/token.model';
+import { User } from '../../models/user.model';
+import { Token } from '../../models/token.model';
 import { Router } from '@angular/router';
-import { Trainee } from '../models/trainee';
-import { Trainer } from '../models/trainer';
-import { HttpClient } from '@angular/common/http';
-import { Role } from '../models/role.model';
-import { NavbarService } from '../services/navbar.service';
+import { Role } from '../../models/role.model';
+import { NavbarService } from '../../services/navbar.service';
 
 
 @Component({
@@ -43,10 +37,10 @@ export class LoginComponent  implements OnInit {
         next: (response:Role) => {
           const role = response.role;
           if(role === 'trainee'){
-            this.router.navigate(['/trainee-profile']);
+            this.router.navigate(['trainee/trainee-profile']);
           }
           else if(role === 'trainer'){
-            this.router.navigate(['/trainer-profile']);
+            this.router.navigate(['trainer/trainer-profile']);
           }
         },
         error: (err:any) =>{
@@ -62,7 +56,6 @@ export class LoginComponent  implements OnInit {
   login(): void {
     localStorage.setItem('username', this.formGroup.getRawValue().username?.toString() || '');
     
-    console.log(this.formGroup.getRawValue());
     
     this.auth.getToken(this.formGroup.getRawValue()).subscribe(
       {
@@ -89,10 +82,10 @@ export class LoginComponent  implements OnInit {
         localStorage.setItem('role', role);
 
         if(this.selected === 'trainee' && role === selectedRole){
-          this.router.navigate(['/trainee-profile']);
+          this.router.navigate(['trainee/trainee-profile']);
         }
         else if(this.selected === 'trainer' && role === selectedRole){
-          this.router.navigate(['/trainer-profile']);
+          this.router.navigate(['trainer/trainer-profile']);
         }
         else {
           alert('Please provide the correct credentials');

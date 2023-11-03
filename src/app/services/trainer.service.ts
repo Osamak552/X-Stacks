@@ -36,7 +36,7 @@ export class TrainerService {
       },
       error: (error:ErrorResponse) => {
         alert("Error occur while creating");
-        this.router.navigate(['/trainer-register']);
+        this.router.navigate(['trainer/trainer-register']);
       },  
     });
   }
@@ -48,11 +48,11 @@ export class TrainerService {
     this.http.put(url, trainee).subscribe({
       next: (reponse:any) => {
         alert("Updated successfully!");
-        this.router.navigate(['/trainer-profile']);
+        this.router.navigate(['trainer/trainer-profile']);
       },
       error: (error:ErrorResponse) => {
         alert("Error occur while updating");
-        this.router.navigate(['/trainer-update']);
+        this.router.navigate(['trainer/trainer-update']);
       },  
     });
   }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavbarService } from '../services/navbar.service';
-import { TraineeService } from '../services/trainee.service';
-import { Trainee } from '../models/trainee';
-import { TrainerService } from '../services/trainer.service';
-import { TrainerResponseDto } from '../models/trainer-response-dto';
-import { AssignTrainersRequestDto } from '../models/assign-trainers.model';
+import { NavbarService } from '../../services/navbar.service';
+import { TraineeService } from '../../services/trainee.service';
+import { Trainee } from '../../models/trainee';
+import { TrainerService } from '../../services/trainer.service';
+import { TrainerResponseDto } from '../../models/trainer-response-dto';
+import { AssignTrainersRequestDto } from '../../models/assign-trainers.model';
 
 @Component({
   selector: 'app-update-trainee',

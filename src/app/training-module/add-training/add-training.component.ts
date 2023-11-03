@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavbarService } from '../services/navbar.service';
+import { NavbarService } from '../../services/navbar.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TrainingService } from '../services/training.service';
-import { TraineeService } from '../services/trainee.service';
-import { Trainee } from '../models/trainee';
-import { TrainerResponseDto } from '../models/trainer-response-dto';
-import { TrainingRequest } from '../models/training.request.model';
+import { TrainingService } from '../../services/training.service';
+import { TraineeService } from '../../services/trainee.service';
+import { Trainee } from '../../models/trainee';
+import { TrainerResponseDto } from '../../models/trainer-response-dto';
+import { TrainingRequest } from '../../models/training.request.model';
 import { Router } from '@angular/router';
 
 @Component({

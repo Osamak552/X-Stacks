@@ -28,6 +28,6 @@ export const traineeRoleGuard: CanActivateFn = (route, state) => {
   }
  
   alert("You don't have an access");
-  router.navigate(['/trainer-profile']);  
+  router.navigate(['trainer/trainer-profile']);  
   return false;
 };

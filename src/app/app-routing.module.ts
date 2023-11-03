@@ -2,19 +2,9 @@ import { authGuard } from './shared/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { TrainerRegistrationComponent } from './trainer-registration/trainer-registration.component';
-import { TraineeRegistrationComponent } from './trainee-registration/trainee-registration.component';
-import { TraineeProfileComponent } from './trainee-profile/trainee-profile.component';
-import { TrainingComponent } from './training/training.component';
-import { TrainerProfileComponent } from './trainer-profile/trainer-profile.component';
-import { TraineeRoleGuardService, traineeRoleGuard } from './shared/trainee-role.guard';
-import { trainerRoleGuard } from './shared/trainer-role.guard';
-import { UpdateTraineeComponent } from './update-trainee/update-trainee.component';
-import { UpdateTrainerComponent } from './update-trainer/update-trainer.component';
-import { AddTrainingComponent } from './add-training/add-training.component';
-import { LogoutComponent } from './logout/logout.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { ChangePasswordComponent } from './auth/change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -32,42 +22,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "trainer-register",
-    component: TrainerRegistrationComponent
+    path:"trainee",
+    loadChildren : () => import('./trainee-module/trainee.module').then(m => m.TraineeModule)
   },
   {
-    path:"trainee-register",
-    component: TraineeRegistrationComponent
+    path:"trainer",
+    loadChildren : () => import('./trainer-module/trainer.module').then(m => m.TrainerModule)
   },
   {
-    path:'trainee-profile',
-    component: TraineeProfileComponent,
-    canActivate: [authGuard,traineeRoleGuard]
-  },
-  {
-    path:'trainer-profile',
-    component: TrainerProfileComponent,
-    canActivate: [authGuard,trainerRoleGuard]
-  },
-  {
-    path: "training",
-    component: TrainingComponent,
-    canActivate: [authGuard]
-  },
-  {
-    path:"trainee-update",
-    component: UpdateTraineeComponent,
-    canActivate: [authGuard,traineeRoleGuard]
-  },
-  {
-    path:"trainer-update",
-    component: UpdateTrainerComponent,
-    canActivate: [authGuard,trainerRoleGuard]
-  },
-  {
-    path: "add-training",
-    component: AddTrainingComponent,
-    canActivate: [authGuard,traineeRoleGuard]
+    path:"training",
+    loadChildren : () => import('./training-module/training.module').then(m => m.TrainingModule)
   },
   {
     path: "change-password",

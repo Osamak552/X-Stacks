@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Specialization } from '../models/specialization.model';
-import { TrainerService } from '../services/trainer.service';
+import { Specialization } from '../../models/specialization.model';
+import { TrainerService } from '../../services/trainer.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Trainer } from '../models/trainer';
-import { NavbarService } from '../services/navbar.service';
+import { Trainer } from '../../models/trainer';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-update-trainer',

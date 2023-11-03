@@ -1,8 +1,8 @@
-import { LoginComponent } from './../login/login.component';
+import { LoginComponent } from '../../auth/login/login.component';
 import { Component, OnInit } from '@angular/core';
-import { TraineeService } from '../services/trainee.service';
-import { Trainee } from '../models/trainee';
-import { NavbarService } from '../services/navbar.service';
+import { TraineeService } from '../../services/trainee.service';
+import { Trainee } from '../../models/trainee';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-trainee-profile',

@@ -39,13 +39,12 @@ export class TrainingService {
     this.http.post(url, trainingRequest).subscribe({
       next: (reponse: any) => {
         alert("Training successfully scheduled");
-        this.router.navigate(['/trainee-profile']);
+        this.router.navigate(['trainee/trainee-profile']);
           console.log(reponse);
       },
       error: (error: any) => {
         alert("Unable to schedule training");
         this.router.navigate(['/add-training']);
-
       }
     });
 

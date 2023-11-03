@@ -36,7 +36,7 @@ export class TraineeService {
         alert("Error occur while creating");
         console.log(error);
         console.log("ERROR: " + JSON.stringify(error));
-        this.router.navigate(['/trainee-register']);
+        this.router.navigate(['trainee/trainee-register']);
       }, 
     });
   }
@@ -57,7 +57,7 @@ export class TraineeService {
         this.http.put('/api/home/trainee/assign-trainers',assignTrainersRequestDto,httpOptions).subscribe({
           next:(data:any) =>{
             alert("trainee updated successfully")
-            this.router.navigate(['/trainee-profile']);
+            this.router.navigate(['trainee/trainee-profile']);
           },
           error: (err:any) => {
             console.log(JSON.stringify(err));

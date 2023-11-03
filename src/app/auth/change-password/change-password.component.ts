@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../services/navbar.service';
-import { TraineeService } from '../services/trainee.service';
+import { NavbarService } from '../../services/navbar.service';
+import { TraineeService } from '../../services/trainee.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ChangePassword } from '../models/change-password';
-import { AuthService } from '../services/auth.service';
+import { ChangePassword } from '../../models/change-password';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-change-password',
